@@ -1,4 +1,23 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"let path = '~/some/path/here'
+"call vundle#rc(path)
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/vundle'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+
+call vundle#end()
+filetype plugin indent on     " required
+
 set nu
+set relativenumber
 set background=dark
 set ruler
 set ai
@@ -16,7 +35,7 @@ set cursorcolumn
 hi cursorline term=reverse cterm=NONE ctermbg=0 guibg=Grey40
 set ls=2
 set statusline=%<%F%h%m%r\ %{strftime(\"%Y/%m/%d-%H:%M\")}%=\ [%l,%v][%p%%]\ ascii:%b\ 
-nmap <F5> i#include<iostream><Enter><ENter>using<Space>namespace<Space>std;<Enter><Enter>int<Space>main(<Right><Space>{<Enter><Enter><Esc>ki<Space><Space><Space><Space>
+"cmap cpp i#include<iostream><Enter><ENter>using<Space>namespace<Space>std;<Enter><Enter>int<Space>main(<Right><Space>{<Enter><Enter><Esc>ki<Space><Space><Space><Space>
 imap { {}<Left>
 imap ( ()<Left>
 imap ;; <Esc>
@@ -24,7 +43,13 @@ imap <C-h> <Left>
 imap <C-k> <Up>
 imap <C-j> <Down>
 imap <C-l> <Right>
-"nmap <>
+set mouse=a
+"noremap j ((v:count == 0) ? 'gj' : 'j') 
+"noremap k (v:count == 0 ? 'gk' : 'k')
+
+nnoremap <silent> <F5> :NERDTree<CR>
+let mapleader=","
+
 
 """""""""""""""  Functions """""""""""""""
 
