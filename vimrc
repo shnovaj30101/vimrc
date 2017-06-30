@@ -12,6 +12,7 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on     " required
@@ -49,6 +50,8 @@ set mouse=a
 
 nnoremap <silent> <F5> :NERDTree<CR>
 let mapleader=","
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 
 """""""""""""""  Functions """""""""""""""
